@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navigation from './components/Navigation';
+import Hero from './components/Hero';
+import About from './components/About';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="min-h-screen bg-gray-900 text-white">
+      <Navigation />
+      <Hero />
+      <About />
+      <Projects />
+      <Contact />
+      
+      {/* Footer */}
+      <footer className="py-8 border-t border-gray-700">
+        <div className="container mx-auto px-6 text-center">
+          <p className="text-gray-400">
+            © 2025 Shoaib Ameer. Built with React and love.
+          </p>
+        </div>
+      </footer>
     </div>
   );
-}
+};
 
 export default App;
