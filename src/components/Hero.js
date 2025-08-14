@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { Linkedin, Mail, ChevronDown, Phone, MapPin } from 'lucide-react';
 
 const Hero = () => {
   const scrollToSection = (sectionId) => {
@@ -10,22 +10,32 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20"></div>
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-pulse">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
             Shoaib Ameer
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8">
-            Full Stack Developer & Creative Problem Solver
+            Sales Executive & Growth Strategist
           </p>
-          <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">
-            I craft beautiful, functional web experiences that bring ideas to life. 
-            Passionate about clean code, user experience, and cutting-edge technologies.
+          <p className="text-lg text-gray-400 mb-8 max-w-3xl mx-auto">
+            Seasoned sales executive with 14+ years of proven success driving revenue acceleration, 
+            territory expansion, and high-performance team development across North America.
           </p>
+          <div className="flex flex-wrap justify-center gap-4 mb-12 text-sm">
+            <div className="flex items-center space-x-2 bg-gray-800/50 px-4 py-2 rounded-full">
+              <MapPin size={16} />
+              <span>Tampa, Florida</span>
+            </div>
+            <div className="flex items-center space-x-2 bg-gray-800/50 px-4 py-2 rounded-full">
+              <Phone size={16} />
+              <span>813-330-5107</span>
+            </div>
+          </div>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button 
-              onClick={() => scrollToSection('projects')}
+              onClick={() => scrollToSection('experience')}
               className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition-all transform hover:scale-105"
             >
-              View My Work
+              View Experience
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
@@ -35,13 +45,10 @@ const Hero = () => {
             </button>
           </div>
           <div className="flex justify-center space-x-6">
-            <a href="https://github.com/shoaibameer" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
-              <Github size={24} />
-            </a>
-            <a href="https://linkedin.com/in/shoaibameer" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
+            <a href="https://linkedin.com/in/shoaibameertpa" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:shoaib@example.com" className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
+            <a href="mailto:s9ameer@gmail.com" className="text-gray-400 hover:text-blue-400 transition-colors transform hover:scale-110">
               <Mail size={24} />
             </a>
           </div>

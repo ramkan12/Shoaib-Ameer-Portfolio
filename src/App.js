@@ -1,8 +1,10 @@
+// src/App.js
 import React from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import About from './components/About';
-import Projects from './components/Projects';
+import Experience from './components/Experience';
+import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 
 const App = () => {
@@ -11,14 +13,15 @@ const App = () => {
       <Navigation />
       <Hero />
       <About />
-      <Projects />
+      <Experience />
+      <Achievements />
       <Contact />
       
       {/* Footer */}
       <footer className="py-8 border-t border-gray-700">
         <div className="container mx-auto px-6 text-center">
           <p className="text-gray-400">
-            © 2025 Shoaib Ameer. Built with React and love.
+            © 2025 Shoaib Ameer. Driving growth through strategic sales leadership.
           </p>
         </div>
       </footer>

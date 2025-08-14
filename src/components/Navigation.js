@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, User, Briefcase, MessageSquare } from 'lucide-react';
+import { Menu, X, User, Briefcase, MessageSquare, Award } from 'lucide-react';
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,7 +10,7 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
       
-      const sections = ['home', 'about', 'projects', 'contact'];
+      const sections = ['home', 'about', 'experience', 'achievements', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -37,7 +37,7 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
         <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-          Portfolio
+          Shoaib Ameer
         </div>
         
         {/* Desktop Menu */}
@@ -45,7 +45,8 @@ const Navigation = () => {
           {[
             { id: 'home', label: 'Home', icon: User },
             { id: 'about', label: 'About', icon: User },
-            { id: 'projects', label: 'Projects', icon: Briefcase },
+            { id: 'experience', label: 'Experience', icon: Briefcase },
+            { id: 'achievements', label: 'Achievements', icon: Award },
             { id: 'contact', label: 'Contact', icon: MessageSquare }
           ].map(({ id, label, icon: Icon }) => (
             <button
@@ -76,7 +77,7 @@ const Navigation = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-gray-800 border-t border-gray-700">
           <div className="container mx-auto px-6 py-4 space-y-3">
-            {['home', 'about', 'projects', 'contact'].map((section) => (
+            {['home', 'about', 'experience', 'achievements', 'contact'].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
