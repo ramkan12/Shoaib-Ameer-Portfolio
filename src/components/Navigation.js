@@ -33,10 +33,10 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-gray-900/95 backdrop-blur-sm py-4' : 'bg-transparent py-6'
-    }`}>
+      isScrolled ? 'py-4' : 'py-6'
+    }`} style={{ backgroundColor: isScrolled ? 'rgba(10, 25, 47, 0.95)' : 'transparent', backdropFilter: 'blur(10px)' }}>
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <div className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+        <div className="text-2xl font-bold" style={{ color: '#0077FF' }}>
           Shoaib Ameer
         </div>
         
@@ -46,7 +46,7 @@ const Navigation = () => {
             { id: 'home', label: 'Home', icon: User },
             { id: 'about', label: 'About', icon: User },
             { id: 'experience', label: 'Experience', icon: Briefcase },
-            { id: 'achievements', label: 'Achievements', icon: Award },
+            { id: 'achievements', label: 'Track Record', icon: Award },
             { id: 'contact', label: 'Contact', icon: MessageSquare }
           ].map(({ id, label, icon: Icon }) => (
             <button
@@ -54,9 +54,13 @@ const Navigation = () => {
               onClick={() => scrollToSection(id)}
               className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all ${
                 activeSection === id 
-                  ? 'text-blue-400 bg-blue-400/10' 
-                  : 'hover:text-blue-400 hover:bg-blue-400/5'
+                  ? 'text-white' 
+                  : 'hover:text-white'
               }`}
+              style={{ 
+                color: activeSection === id ? '#0077FF' : '#C0C0C0',
+                backgroundColor: activeSection === id ? 'rgba(0, 119, 255, 0.1)' : 'transparent'
+              }}
             >
               <Icon size={16} />
               <span>{label}</span>
@@ -68,6 +72,7 @@ const Navigation = () => {
         <button
           className="md:hidden p-2"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          style={{ color: '#C0C0C0' }}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
@@ -75,15 +80,16 @@ const Navigation = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden bg-gray-800 border-t border-gray-700">
+        <div className="md:hidden border-t" style={{ backgroundColor: 'rgba(10, 25, 47, 0.95)', borderColor: 'rgba(0, 119, 255, 0.2)' }}>
           <div className="container mx-auto px-6 py-4 space-y-3">
             {['home', 'about', 'experience', 'achievements', 'contact'].map((section) => (
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className="block w-full text-left px-3 py-2 rounded hover:bg-gray-700 transition-colors capitalize"
+                className="block w-full text-left px-3 py-2 rounded hover:bg-opacity-20 transition-colors capitalize"
+                style={{ color: '#C0C0C0' }}
               >
-                {section}
+                {section === 'achievements' ? 'Track Record' : section}
               </button>
             ))}
           </div>
